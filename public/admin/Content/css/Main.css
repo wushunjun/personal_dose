@@ -1,0 +1,177 @@
+﻿body {
+	font-family: 'Microsoft YaHei';
+	position: relative;
+}
+html{height:100%}
+body{height:100%}
+html{overflow:hidden;}
+a {
+	cursor: pointer;
+}
+
+.d_body {
+	background: url(../img/bg.png) no-repeat;
+	background-size: cover;
+	color: #e6f6ff;
+}
+.main
+{
+	max-width: 1800px;
+	position: relative;
+	padding-left: 80px;
+	padding-right: 80px;
+	margin-right: auto;
+    margin-left: auto;
+}
+.head
+{
+	padding: 80px 0;
+	position: relative;
+}
+.titleD
+{
+ font-size: 70px;
+ padding-left: 30px;
+ letter-spacing: 1px;
+}
+.title
+{
+	position: absolute;
+	display: inline-block;
+	font-size: 16px;
+	padding-left: 160px;
+	left: 0px;
+	top: 182px;
+	letter-spacing: 3px;
+	 text-transform: uppercase;
+
+}
+.logo
+{
+
+
+}
+.logo img
+{
+	vertical-align: top;
+ 
+}
+.time
+{
+	position: absolute;
+	right: 0px;
+	top: 80px
+}
+.time_en
+{
+	font-size: 88px;
+}
+.time_st
+{
+	font-size: 14px;
+	padding-left: 14px;
+}
+.body
+{
+	text-align: center;
+	padding-top: 100px;
+}
+.h1
+{
+	 font-size: 60px;
+	 
+}
+.h3
+{
+	 font-size: 45px;
+	 padding: 70px 0;
+  padding-top: 10px;
+  letter-spacing: 2px;
+}
+.h2
+{
+	font-size: 14px;
+	letter-spacing: 7.5px;
+	text-transform: uppercase;
+	padding: 20px 0;
+}
+.btn 
+{
+  display: inline-block;
+  padding: 45px 160px;
+  border-radius: 15px;
+  background-color: #1b8dce;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(62,90,190,0.2), 0 6px 20px 0 rgba(62,90,190,0.19);
+}
+.btn:hover
+{
+	box-shadow: 0 12px 16px 0 rgba(62,90,190.24), 0 17px 50px 0 rgba(62,90,190,0.19);
+}
+.btn .zh
+{
+font-size: 45px;
+}
+.btn .en
+{
+	 
+		font-size: 20px;
+		text-transform: uppercase;
+}
+.footer
+{
+	text-align: center;
+	bottom: 40px;
+	position: absolute;
+	display: block;
+	width: 100%;
+	color: #acc2eb;
+}
+.ft1
+{
+	font-size: 16px;
+	padding: 10px;
+	letter-spacing: 2px;
+}
+.ft2
+{
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.distext
+{
+border: 5px solid #0c1c66;
+background: radial-gradient(#65d3e4 24%, #3981ab 100%);
+font-size: 50px;
+padding: 36px;
+margin: 0 250px;
+box-shadow: 0 12px 16px 0 rgba(62,90,190.24), 0 17px 50px 0 rgba(62,90,190,0.19);
+height: 66px;
+position: relative;
+overflow: hidden;
+}
+.distext .ul
+{
+	 position: absolute;
+	 width: 100%;
+	 top: 0px;
+	 left: 0px;
+}
+.distext span
+{
+ display: block;
+ padding-top:36px; 
+ height: 102px;
+}
+.distitle
+{
+	font-size: 60px;
+	color: #ffe26d;
+	padding: 60px;
+	padding-top: 0px;
+
+}
+.strating .btn
+{
+  margin-top: 60px;
+}

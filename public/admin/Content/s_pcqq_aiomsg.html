@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html">
+
+	<title> 重庆市璧山区公安局</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="Content/css/Main.css" rel="stylesheet">
+	<style>
+		.a {
+			height: 100px;
+			width: 700px;
+			overflow: hidden;
+			margin: 10px auto;
+		}
+
+		.a li {
+			height: 198px;
+			border: 1px solid #ddd;
+			font-size: 30px;
+			text-align: center;
+
+		}
+
+		.hidden {
+			display: none !important;
+		}
+
+		.re-box {
+			position: relative
+		}
+
+		.re-box .hide-box {
+			position: absolute;
+			width: 80px;
+			height: 176px;
+			left: 20px;
+			top: 0;
+		}
+	</style>
+</head>
+
+<body class="d_body">
+	<div class="main">
+		<div class="head">
+			<div class="logo"><img src="../Content/img/logo.png"><span class="titleD">重庆市璧山区公安局</span>
+				<div class="title">Public Security Bureau of Bishan District, Chongqing</div>
+
+				<div class="time">
+					<div class="time_en">15:36:00</div>
+					<span class="time_st">2019年04月12日 周五</span>
+				</div>
+			</div>
+		</div>
+		<div class="body">
+			<div class="strat">
+
+				<div class="h1">招投标项目供应商抽取系统</div>
+				<div class="h2">Supplier Extraction System for Bidding Project</div>
+				<div class="h3">公平 | 公正 | 公开</div>
+
+				<div class="btn re-box" onclick="start()">
+					<div class="hide-box" onclick="start(1)"></div>
+					<div class="zh">开始</div>
+					<div class="en">start</div>
+				</div>
+			</div>
+			<div class="strating hidden">
+
+				<div class="distitle">关于集控中心建设项目的开标</div>
+				<div class="distext">
+					<div class="ul"><span>重庆艾购到家网络科技有限公司</span></div>
+				</div>
+				<div class="btn hidden re-box" onclick="start()">
+					<div class="hide-box" onclick="start(1)"></div>
+					<div class="zh">重新开始</div>
+					<div class="en">Restart</div>
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+	<div class="footer">
+		<div class="ft1">版权所属：重庆市璧山区公安局</div>
+		<div class="ft2">Copyright Ownership：Public Security Bureau of Bishan District,Chongqing </div>
+	</div>
+</body>
+<script type="text/javascript" src="Content/js/jquery.js"></script>
+<script>
+	function randomNum(minNum, maxNum) {
+		switch (arguments.length) {
+			case 1:
+				return parseInt(Math.random() * minNum + 1, 10);
+				break;
+			case 2:
+				return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+				break;
+			default:
+				return 0;
+				break;
+		}
+	}
+
+	
+	function start(type) {
+		window.event.stopPropagation();
+		var listname = [];
+		if (type === 1) { // 点击分区
+			listname = listname2;
+		} else {
+			listname = listname1
+		}
+		$(".strat").addClass("hidden");
+		$(".strating").removeClass("hidden");
+
+		$(".distitle").removeClass("hidden");
+		$(".strating .btn").addClass("hidden");
+		var ul = $(".distext .ul");
+		ul.css({ top: 0 });
+
+		var randname = randomNum(1, listname.length);
+
+		var randnum = randomNum(2, 6)
+		if (type === 1) {
+			randname = 1
+		}
+		var zong = randname + randnum * listname.length;
+		var zhongt = 0;
+		$(".distext .ul").html("");
+		for (let index = 0; index < randnum + 1; index++) {
+			$.each(listname, function (i, item) {
+				zhongt++;
+				$(".distext .ul").append("<span>" + item + "</span");
+				if (zhongt == zong) {
+					return false;
+				}
+
+			})
+		}
+		scroll_f();
+	}
+	//滚动
+	var scrollIndex = 0;
+	var Timer = null;
+	function scroll_f() {
+		clearInterval(Timer);
+		var ul = $(".distext .ul");
+		var li = ul.children("span");
+		var h = li.height() + 36;
+		var index = 0;
+		ul.css("height", h * li.length);
+
+		function run() {
+			if (scrollIndex >= li.length - 1) {
+
+				scrollIndex = 1;
+				clearInterval(Timer);
+				$(".distitle").addClass("hidden")
+				$(".strating .btn").removeClass("hidden")
+				//ul.animate({top:-scrollIndex*h},100);
+			}
+			else {
+				scrollIndex++;
+				ul.animate({ top: -scrollIndex * h }, 100);
+			}
+		}
+		Timer = setInterval(run, 100);
+	}
+
+	//时间格式化批处理
+	function dateFtt(fmt, date) {
+		var o = {
+			"M+": date.getMonth() + 1, //月份
+			"d+": date.getDate(), //日
+			"h+": date.getHours(), //小时
+			"m+": date.getMinutes(), //分
+			"s+": date.getSeconds(), //秒
+			"q+": Math.floor((date.getMonth() + 3) / 3), //季度
+			"S": date.getMilliseconds() //毫秒
+		};
+		if (/(y+)/.test(fmt))
+			fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+		for (var k in o)
+			if (new RegExp("(" + k + ")").test(fmt))
+				fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+		return fmt;
+	}
+
+	function myFunction(d) {
+
+		var weekday = new Array(7);
+		weekday[0] = "周日";
+		weekday[1] = "周一";
+		weekday[2] = "周二";
+		weekday[3] = "周三";
+		weekday[4] = "周四";
+		weekday[5] = "周五";
+		weekday[6] = "周六";
+		return weekday[d.getDay()];
+	}
+
+
+	setInterval(function () {
+
+		var tim = dateFtt("hh:mm:ss", new Date());
+		$(".time_en").text(tim)
+		var tt = dateFtt("yyyy年MM月dd日 " + myFunction(new Date()), new Date());
+		$(".time_st").text(tt)
+	}, 1000)
+
+</script>
+
+</html>
